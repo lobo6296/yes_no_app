@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
           title: const Text('Material App Bar'),
         ),
         body: Center(
-            child:
-                FilledButton.tonal(onPressed: () {}, child: Text('Click me'))),
+            child: FilledButton.tonal(
+                onPressed: () {}, child: const Text('Click me'))),
       ),
     );
   }
