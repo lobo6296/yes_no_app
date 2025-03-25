@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yes_no_app/presentation/widgets/chat/her_message_bubble.dart';
 import 'package:yes_no_app/presentation/widgets/chat/my_message_bubble.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -12,7 +13,7 @@ class ChatScreen extends StatelessWidget {
           padding: EdgeInsets.all(4.0),
           child: CircleAvatar(
             backgroundImage: NetworkImage(
-                'https://www.medespoir.fr/wp-content/uploads/2019/05/jennifer-aniston.jpg'),
+                'https://www.stylist.co.uk/images/app/uploads/2022/06/01105352/jennifer-aniston-crop-1654077521-1390x1390.jpg?w=256&h=256&fit=max&auto=format%2Ccompress'),
           ),
         ),
         title: const Text('Mi amor '),
@@ -35,7 +36,9 @@ class _ChatView extends StatelessWidget {
                 child: ListView.builder(
               itemCount: 100,
               itemBuilder: (context, index) {
-                return const MyMessageBubble();
+                return (index % 2 == 0)
+                    ? const HerMessageBubble()
+                    : const MyMessageBubble();
               },
             )),
             const Text('Mundo')
